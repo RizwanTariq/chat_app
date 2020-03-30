@@ -2,9 +2,10 @@
   "name": "chat_app",
   "version": "1.0.0",
   "description": "Realtime chat app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/RizwanTariq/chat_app/issues"
   },
-  "homepage": "https://github.com/RizwanTariq/chat_app#readme"
+  "homepage": "https://github.com/RizwanTariq/chat_app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
