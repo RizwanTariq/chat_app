@@ -12,8 +12,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //Run when new client connects
 io.on("connection", socket => {
-  console.log("New connection...");
-
   socket.emit("message", "Welcome to ChatCord!");
 
   //Broadcast when a user connects
@@ -22,6 +20,11 @@ io.on("connection", socket => {
   //When user disconnects
   socket.on("disconnect", () => {
     io.emit("message", "A user hs left the room.");
+  });
+
+  //Listen for chat messages
+  socket.on("chatMessage", msg => {
+    io.emit("message", msg);
   });
 });
 
